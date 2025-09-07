@@ -50,41 +50,41 @@ export default function ClientDashboard() {
   };
 
   return (
-    <div className="w-full max-w-4xl mt-20 mx-auto px-4 sm:px-6 relative z-10">
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-white mb-8 sm:mb-10">
+    <div className="w-full max-w-4xl mt-12 sm:mt-20 mx-auto px-2 sm:px-4 md:px-6 relative z-10">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-white mb-6 sm:mb-8">
         {editId ? "Update Course" : "Add New Course"}
       </h1>
 
-      <div className="bg-gray-900/80 border border-white/10 rounded-2xl shadow-xl p-6 sm:p-8">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-6 text-white text-center">
+      <div className="bg-gray-900/80 border border-white/10 rounded-2xl shadow-xl p-4 sm:p-6 md:p-8">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 text-white text-center">
           {editId ? "Edit Course Details" : "Course Details"}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <input
-            className="w-full p-3 rounded-lg bg-gray-800 text-white"
+            className="w-full p-2 sm:p-3 rounded-lg bg-gray-800 text-white text-sm sm:text-base"
             placeholder="Title"
             value={form.title}
             onChange={(e) => setForm({ ...form, title: e.target.value })}
           />
           <input
-            className="w-full p-3 rounded-lg bg-gray-800 text-white"
+            className="w-full p-2 sm:p-3 rounded-lg bg-gray-800 text-white text-sm sm:text-base"
             placeholder="Description"
             value={form.description}
             onChange={(e) => setForm({ ...form, description: e.target.value })}
           />
           <input
-            className="w-full p-3 rounded-lg bg-gray-800 text-white md:col-span-2"
+            className="w-full p-2 sm:p-3 rounded-lg bg-gray-800 text-white text-sm sm:text-base sm:col-span-2"
             placeholder="Image URL"
             value={form.image}
             onChange={(e) => setForm({ ...form, image: e.target.value })}
           />
         </div>
 
-        <div className="flex justify-center mt-6">
+        <div className="flex justify-center mt-4 sm:mt-6">
           <button
             onClick={handleSubmit}
-            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold text-white text-center"
+            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-white text-center text-sm sm:text-base"
           >
             {editId ? "Update Course" : "Add Course"}
           </button>
@@ -93,6 +93,7 @@ export default function ClientDashboard() {
     </div>
   );
 }
+
 
 
 
