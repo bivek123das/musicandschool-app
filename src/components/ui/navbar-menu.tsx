@@ -3,6 +3,7 @@ import React,{ReactNode} from "react";
 import { motion,Transition } from "framer-motion";
 import Link,{LinkProps} from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utlis";
 
 interface HoveredLinkProps extends LinkProps {
   children: ReactNode;
@@ -22,17 +23,19 @@ export const MenuItem = ({
   setActive,
   active,
   item,
+  itemKey,
   children,
   href,
 }: {
-  setActive: (item: string) => void;
+  setActive: (item: string | null) => void;
   active: string | null;
-  item: string;
+  item: ReactNode;
+  itemKey?: string; 
   children?: React.ReactNode;
   href?: string;
 }) => {
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative ">
+    <div onMouseEnter={() => setActive(item as string)} className="relative ">
       {href ? (
         <Link href={href}>
           <motion.p
@@ -81,14 +84,16 @@ export const MenuItem = ({
 export const Menu = ({
   setActive,
   children,
+  className,
 }: {
   setActive: (item: string | null) => void;
   children: React.ReactNode;
+  className?: string; 
 }) => {
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex flex-wrap sm:flex-nowrap justify-between sm:justify-center gap-3 sm:gap-5 px-4 sm:px-8 py-3 sm:py-5 text-sm sm:text-base w-full overflow-x-auto"
+      className={cn("relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex flex-wrap sm:flex-nowrap justify-between sm:justify-center gap-3 sm:gap-5 px-4 sm:px-8 py-3 sm:py-5 text-sm sm:text-base w-full overflow-x-auto",className)}
     >
       {children}
     </nav>

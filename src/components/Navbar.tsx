@@ -39,6 +39,7 @@ function Navbar({ className }: { className?: string }) {
         <MenuItem
           setActive={setActive}
           active={active}
+          itemKey="browse" 
           item={
             <>
               <span className="hidden sm:inline">Browse</span>
