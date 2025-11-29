@@ -3,7 +3,7 @@
 
 function Footer() {
   return (
-    <footer className="bg-black text-gray-400 py-12">
+        <footer className="bg-black text-gray-400 py-12">
       <div className="section-shell-wide grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="text-center sm:text-left">
           <h2 className="text-white text-lg font-semibold mb-4">About Us</h2>
@@ -80,11 +80,11 @@ function Footer() {
           <p>Email: info@musicschool.com</p>
           <p>Phone: (123) 456-7890</p>
         </div>
-      </div>
+        </div>
       <p className="text-center text-xs pt-8">
         © 2025 Music School. All rights reserved.
       </p>
-    </footer>
+        </footer>
   );
 }
 

@@ -1,8 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { HoveredLink, Menu, MenuItem } from "./ui/navbar-menu";
+import { Menu, MenuItem } from "./ui/navbar-menu";
 import { cn } from "@/lib/utlis";
+
+// Icons
+import { FiSearch } from "react-icons/fi";
+import { MdDashboard } from "react-icons/md";
+import { FiPhoneCall } from "react-icons/fi";
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -11,19 +16,18 @@ function Navbar({ className }: { className?: string }) {
     <div
       className={cn(
         "fixed top-3 sm:top-6 md:top-10 inset-x-0 z-50 w-full max-w-5xl mx-auto px-4 sm:px-6",
-        className
+        "whitespace-nowrap overflow-x-auto no-scrollbar",
+        
       )}
     >
-      <Menu setActive={setActive}>
+      <Menu setActive={setActive} className="flex gap-4 whitespace-nowrap">
+
+        {/* HOME */}
         <Link href={"/"}>
-          <MenuItem
-            setActive={setActive}
-            active={active}
-            item="Home"
-           
-          />
+          <MenuItem setActive={setActive} active={active} item="Home" />
         </Link>
 
+        {/* OUR COURSES */}
         <MenuItem
           setActive={setActive}
           active={active}
@@ -31,55 +35,53 @@ function Navbar({ className }: { className?: string }) {
           href="/courses"
         />
 
+        {/* BROWSE — icon on small screens */}
         <MenuItem
           setActive={setActive}
           active={active}
-          item="Browse"
+          item={
+            <>
+              <span className="hidden sm:inline">Browse</span>
+              <FiSearch className="text-xl sm:hidden" />
+            </>
+          }
           href="/browse"
-        >
-          <div className="grid grid-cols-1 gap-3 text-xs sm:text-sm min-w-[180px]">
-            <HoveredLink href="/courses" className="text-white flex items-center justify-between">
-              <span>All Courses</span>
-              <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded-full">
-                View
-              </span>
-            </HoveredLink>
-            <HoveredLink href="/courses/basic-music-theory" className="text-white">
-              Basic Music Theory
-            </HoveredLink>
-            <HoveredLink href="/courses/advanced-composition" className="text-white">
-              Advanced Composition
-            </HoveredLink>
-            <HoveredLink href="/courses/songwriting" className="text-white">
-              Songwriting
-            </HoveredLink>
-            <HoveredLink href="/courses/music-production" className="text-white">
-              Music Production
-            </HoveredLink>
-          </div>
-        </MenuItem>
+        />
 
+        {/* DASHBOARD — icon on small screens */}
         <Link href={"/dashboard"}>
           <MenuItem
             setActive={setActive}
             active={active}
-            item="Dashboard"
-           
+            item={
+              <>
+                <span className="hidden sm:inline">Dashboard</span>
+                <MdDashboard className="text-xl sm:hidden" />
+              </>
+            }
           />
         </Link>
 
+        {/* CONTACT US — icon on small screens */}
         <Link href={"/contact"}>
           <MenuItem
             setActive={setActive}
             active={active}
-            item="Contact Us"
-           
+            item={
+              <>
+                <span className="hidden sm:inline">Contact Us</span>
+                <FiPhoneCall className="text-xl sm:hidden" />
+              </>
+            }
           />
         </Link>
+
       </Menu>
     </div>
   );
 }
 
 export default Navbar;
+
+
 

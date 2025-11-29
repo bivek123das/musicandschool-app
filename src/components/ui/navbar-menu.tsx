@@ -43,12 +43,12 @@ export const MenuItem = ({
           </motion.p>
         </Link>
       ) : (
-        <motion.p
-          transition={{ duration: 0.3 }}
-          className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
-        >
-          {item}
-        </motion.p>
+      <motion.p
+        transition={{ duration: 0.3 }}
+        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
+      >
+        {item}
+      </motion.p>
       )}
       {active !== null && (
         <motion.div

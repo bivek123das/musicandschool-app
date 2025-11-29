@@ -54,9 +54,16 @@ body {
   .section-shell-wide {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10;
   }
-
+ 
   .section-stack {
     @apply flex flex-col gap-4 sm:gap-6;
   }
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
