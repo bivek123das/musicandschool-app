@@ -45,7 +45,7 @@ const musicSchoolWebinars = [
 function Webinars() {
   return (
     <div className="py-8 sm:py-12 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6">
+      <div className="section-shell-wide">
         <div className="text-center">
           <h2 className="text-xs sm:text-sm md:text-base text-teal-600 font-semibold tracking-wide uppercase">
             FEATURED WEBINARS

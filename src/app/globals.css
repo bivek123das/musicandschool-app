@@ -46,6 +46,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer components {
+  .section-shell {
+    @apply w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
 
- 
+  .section-shell-wide {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10;
+  }
+
+  .section-stack {
+    @apply flex flex-col gap-4 sm:gap-6;
+  }
+}
 

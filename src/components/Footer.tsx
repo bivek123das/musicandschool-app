@@ -3,9 +3,9 @@
 
 function Footer() {
   return (
-        <footer className="bg-black text-gray-400 py-12">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-4 sm:px-6 lg:px-8 ">
-        <div>
+    <footer className="bg-black text-gray-400 py-12">
+      <div className="section-shell-wide grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="text-center sm:text-left">
           <h2 className="text-white text-lg font-semibold mb-4">About Us</h2>
           <p className="mb-4">
             Music School is a premier institution dedicated to teaching the art
@@ -13,9 +13,9 @@ function Footer() {
             fostering a vibrant community of musicians.
           </p>
         </div>
-        <div>
+        <div className="text-center sm:text-left">
           <h2 className="text-white text-lg font-semibold mb-4">Quick Links</h2>
-          <ul>
+          <ul className="space-y-2">
             <li>
               <a
                 href="#"
@@ -50,9 +50,9 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="text-center sm:text-left">
           <h2 className="text-white text-lg font-semibold mb-4">Follow Us</h2>
-          <div className="flex space-x-4">
+          <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0 items-center sm:items-start">
             <a
               href="#"
               className="hover:text-white transition-colors duration-300"
@@ -73,17 +73,19 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div>
+        <div className="text-center sm:text-left">
           <h2 className="text-white text-lg font-semibold mb-4">Contact Us</h2>
           <p>Nagaon ,Assam , India</p>
           <p>Nagaon 782001</p>
           <p>Email: info@musicschool.com</p>
           <p>Phone: (123) 456-7890</p>
         </div>
-        </div>
-        <p className="text-center text-xs pt-8">© 2025 Music School. All rights reserved.</p>
-        </footer>
-  )
+      </div>
+      <p className="text-center text-xs pt-8">
+        © 2025 Music School. All rights reserved.
+      </p>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

@@ -34,7 +34,7 @@ const instructors = [
 
 function Instructors() {
   return (
-    <div className="relative h-auto sm:h-[40rem] overflow-hidden flex items-center justify-center px-2 sm:px-4 md:px-6 py-8 sm:py-0">
+    <div className="section-shell relative h-auto sm:h-[40rem] overflow-hidden flex items-center justify-center py-8 sm:py-0">
       <WavyBackground className="max-w-4xl mx-auto flex flex-col items-center justify-center h-full">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-white font-bold text-center mb-4 sm:mb-6">
           Meet Our Instructors

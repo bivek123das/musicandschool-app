@@ -10,7 +10,7 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed top-4 sm:top-6 md:top-10 inset-x-0 max-w-full sm:max-w-2xl mx-auto z-50 px-2 sm:px-4 md:px-0",
+        "fixed top-3 sm:top-6 md:top-10 inset-x-0 z-50 w-full max-w-5xl mx-auto px-4 sm:px-6",
         className
       )}
     >
@@ -28,7 +28,7 @@ function Navbar({ className }: { className?: string }) {
           setActive={setActive}
           active={active}
           item="Our Courses"
-         
+          href="/courses"
         >
           <div className="flex flex-col space-y-2 sm:space-y-4 text-xs sm:text-sm">
             <HoveredLink href="/courses" className="text-white">
