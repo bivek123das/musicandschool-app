@@ -29,30 +29,31 @@ function Navbar({ className }: { className?: string }) {
           active={active}
           item="Our Courses"
           href="/courses"
+        />
+
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          item="Browse"
+          href="/browse"
         >
-          <div className="flex flex-col space-y-2 sm:space-y-4 text-xs sm:text-sm">
-            <HoveredLink href="/courses" className="text-white">
-              All Courses
+          <div className="grid grid-cols-1 gap-3 text-xs sm:text-sm min-w-[180px]">
+            <HoveredLink href="/courses" className="text-white flex items-center justify-between">
+              <span>All Courses</span>
+              <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded-full">
+                View
+              </span>
             </HoveredLink>
-            <HoveredLink
-              href="/courses/basic-music-theory"
-              className="text-white"
-            >
+            <HoveredLink href="/courses/basic-music-theory" className="text-white">
               Basic Music Theory
             </HoveredLink>
-            <HoveredLink
-              href="/courses/advanced-composition"
-              className="text-white"
-            >
+            <HoveredLink href="/courses/advanced-composition" className="text-white">
               Advanced Composition
             </HoveredLink>
             <HoveredLink href="/courses/songwriting" className="text-white">
               Songwriting
             </HoveredLink>
-            <HoveredLink
-              href="/courses/music-production"
-              className="text-white"
-            >
+            <HoveredLink href="/courses/music-production" className="text-white">
               Music Production
             </HoveredLink>
           </div>

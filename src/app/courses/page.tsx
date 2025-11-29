@@ -46,24 +46,26 @@ export default function CoursesPage() {
                 />
               </CardItem>
 
-              <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mt-4 sm:mt-6 gap-2 sm:gap-0">
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  onClick={() => handleUpdate(course.id)}
-                  className="px-3 sm:px-4 py-2 rounded-xl bg-emerald-500 text-white text-xs sm:text-sm font-bold hover:bg-emerald-600 w-full sm:w-auto"
-                >
-                  Update
-                </CardItem>
-                <CardItem
-                  translateZ={20}
-                  as="button"
-                  onClick={() => deleteCourse(course.id)}
-                  className="px-3 sm:px-4 py-2 rounded-xl bg-rose-500 text-white text-xs sm:text-sm font-bold hover:bg-rose-600 w-full sm:w-auto"
-                >
-                  Delete
-                </CardItem>
-              </div>
+              {course.isCustom && (
+                <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center mt-4 sm:mt-6 gap-2 sm:gap-0">
+                  <CardItem
+                    translateZ={20}
+                    as="button"
+                    onClick={() => handleUpdate(course.id)}
+                    className="px-3 sm:px-4 py-2 rounded-xl bg-emerald-500 text-white text-xs sm:text-sm font-bold hover:bg-emerald-600 w-full sm:w-auto"
+                  >
+                    Update
+                  </CardItem>
+                  <CardItem
+                    translateZ={20}
+                    as="button"
+                    onClick={() => deleteCourse(course.id)}
+                    className="px-3 sm:px-4 py-2 rounded-xl bg-rose-500 text-white text-xs sm:text-sm font-bold hover:bg-rose-600 w-full sm:w-auto"
+                  >
+                    Delete
+                  </CardItem>
+                </div>
+              )}
             </CardBody>
           </CardContainer>
         ))}

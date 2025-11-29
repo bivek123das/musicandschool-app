@@ -6,6 +6,7 @@ export interface Course {
   title: string;
   description: string;
   image: string;
+  isCustom?: boolean;
 }
 
 interface CourseState {
@@ -19,10 +20,11 @@ export const useCourseStore = create<CourseState>((set) => ({
   courses: (courseData.courses as { id: number; title: string; description: string; image: string }[]).map((c) => ({
     ...c,
     id: String(c.id),
+    isCustom: false,
   })),
   addCourse: (course) =>
     set((state) => ({
-      courses: [...state.courses, course],
+      courses: [...state.courses, { ...course, isCustom: true }],
     })),
   updateCourse: (id, updated) =>
     set((state) => ({
