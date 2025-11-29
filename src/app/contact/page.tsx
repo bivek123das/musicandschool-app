@@ -12,13 +12,13 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 py-12 pt-28 sm:pt-36 relative">
+    <div className="min-h-screen bg-slate-950 text-gray-100 sm:bg-gray-100 sm:text-gray-900 dark:bg-gray-900 py-12 pt-28 sm:pt-36 relative">
       <BackgroundBeams className="absolute top-0 left-0 w-full h-full z-0" />
       <div className="max-w-xl sm:max-w-2xl mx-auto p-4 relative z-10">
-        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-center font-sans font-bold mb-4 sm:mb-8 text-white">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-center font-sans font-bold mb-4 sm:mb-8 text-white sm:text-gray-900">
           Contact Us
         </h1>
-        <p className="text-neutral-500 max-w-xs sm:max-w-lg mx-auto my-2 text-xs sm:text-sm md:text-base text-center">
+        <p className="text-gray-300 sm:text-neutral-500 max-w-xs sm:max-w-lg mx-auto my-2 text-xs sm:text-sm md:text-base text-center">
           We&apos;re here to help with any questions about our courses, programs, or events. Reach out and let us know how we can assist you in your musical journey.
         </p>
 
